@@ -7,9 +7,6 @@ const answerElement = Array.from(recupAnswerElementHTML);
 const recupTips = document.getElementsByClassName("tips");
 const tips = Array.from(recupTips);
 
-const recupButtonSuivant = document.getElementsByClassName("btnSuivant");
-const buttonSuivant = Array.from(recupButtonSuivant);
-
 const recupProgressBar = document.getElementsByClassName("progress-bar");
 const progressBar = Array.from(recupProgressBar);
 
@@ -22,6 +19,9 @@ const themeDiv = Array.from(recupThemeDiv);
 const recupDifficulteDiv = document.getElementsByClassName("difficulte");
 const difficuleDiv = Array.from(recupDifficulteDiv);
 
+const recupReponseAll = document.getElementsByClassName("reponse");
+const reponseAll = Array.from(recupReponseAll);
+
 
 const nbTotalQuestion = 8;
 let nbQuestionRep = 0;
@@ -32,15 +32,16 @@ let progressPercent;
     let recupAnswers = data[nbQuestionRep]["reponses"];
     let answers = [];
 
-    for(var i in recupAnswers)
-    answers.push([i, recupAnswers[i]]);
+    let i;
+    for(i in recupAnswers)
+        answers.push([i, recupAnswers[i]]);
     /** ------------ */
 
     /** Load Correct Answer */
     let recupAnswerCorrect = data[nbQuestionRep]["bonne_reponse"];
     let answerCorrect = [];
 
-    for(var i in recupAnswerCorrect)
+    for(i in recupAnswerCorrect)
     answerCorrect.push([recupAnswerCorrect[i]]);
     /** ------------------- */
 
@@ -48,7 +49,7 @@ let progressPercent;
     let recupQuestion = data[nbQuestionRep]["question"];
     let questionRep = [];
     
-    for(var i in recupQuestion)
+    for(i in recupQuestion)
     questionRep.push([recupQuestion[i]]);
     /** ------------- */
 
@@ -56,7 +57,7 @@ let progressPercent;
     let recupQuestionTips = data[nbQuestionRep]["tips"];
     let questionTipsRep = [];
 
-    for(var i in recupQuestionTips)
+    for(i in recupQuestionTips)
         questionTipsRep.push([recupQuestionTips[i]]);
     /** ------------- */
 
@@ -64,7 +65,7 @@ let progressPercent;
     let recupTheme = data[nbQuestionRep]["theme"];
     let questionThemeRep = [];
 
-    for(var i in recupTheme)
+    for(i in recupTheme)
         questionThemeRep.push([recupTheme[i]]);
     /** ------------- */
 
@@ -72,7 +73,7 @@ let progressPercent;
     let recupDifficulte = data[nbQuestionRep]["difficulte"];
     let questionDifficulteRep = [];
 
-    for(var i in recupDifficulte)
+    for(i in recupDifficulte)
         questionDifficulteRep.push([recupDifficulte[i]]);
     /** ------------- */
 
@@ -102,9 +103,9 @@ function onResponse() {
     console.log(typeof answer);
     console.log(typeof answerCorrect[0]);
 
-    if((answer == answerCorrect) && (tips[0].classList.contains("d-none"))){
+    if((answer === answerCorrect) && (tips[0].classList.contains("d-none"))){
         this.style = "background-color: rgba(138, 247, 138, 1); border-radius: 1em; min-height: 5em;"
-    }else if((answer != answerCorrect[0]) && (tips[0].classList.contains("d-none"))){
+    }else if((answer !== answerCorrect[0]) && (tips[0].classList.contains("d-none"))){
         this.style = "background-color: rgba(246, 159, 159, 1); border-radius: 1em; min-height: 5em;"
     }else{
         this.style = "background-color: #f1f1f1; border-radius: 1em; min-height: 5em;"
@@ -118,15 +119,16 @@ function onResponse() {
     });
     
     console.log("click");
-};
+}
 
 function loadQuestion() {
     /** Load Element */
-        /** Load Answers */
+        let i;
+    /** Load Answers */
         recupAnswers = data[nbQuestionRep]["reponses"];
         answers = [];
 
-        for(var i in recupAnswers)
+        for(i in recupAnswers)
         answers.push([i, recupAnswers[i]]);
         /** ------------ */
 
@@ -134,7 +136,7 @@ function loadQuestion() {
         recupAnswerCorrect = data[nbQuestionRep]["bonne_reponse"];
         answerCorrect = [];
 
-        for(var i in recupAnswerCorrect)
+        for(i in recupAnswerCorrect)
         answerCorrect.push([recupAnswerCorrect[i]]);
         /** ------------------- */
 
@@ -187,19 +189,21 @@ function loadQuestion() {
     answerElement[0].innerHTML= "";
 
     tips[0].innerHTML = `
-    <div class="contenuTIPS container-fluid row mb-40 mt-10">
-        <div class="position-relative mt-2" style="min-height: 2rem;">
-            <div class="col-2 col-lg-2 position-absolute top-0 start-0 badge bg-secondary text-primary" style="min-height: 2em;">
-                <div class="text position-absolute top-50 start-50 translate-middle">Tips</div>
+        <div class="indication">
+            <div class="position-relative mt-2" style="min-height: 2rem;">
+                <div class="col-2 col-lg-2 position-absolute top-0 start-0 badge bg-secondary text-primary" style="min-height: 2em;">
+                    <div class="text position-absolute top-50 start-50 translate-middle">Tips</div>
+                </div>
             </div>
         </div>
-        <div class="col-10 m-auto">${questionTipsRep[0]}</div>
-    </div>
-    <div class="position-relative">
-        <button type="button" class="btnSuivant btn btn-primary col-1 position-absolute bottom-100 end-0 mb-1" style="background-color: #494949;">
-            Suivant
-        </button>
-    </div>
+        <div class="contenu mb-4">
+            <div class="col-10 m-auto">${questionTipsRep[0]}</div>
+        </div>
+        <div class="position-relative">
+            <button type="button" class="btnSuivant btn btn-primary col-1 position-absolute bottom-100 end-0 mb-1" style="background-color: #494949;">
+                Suivant
+            </button>
+        </div>
     `
     tips[0].classList.add("d-none");
 
@@ -260,11 +264,7 @@ function loadQuestion() {
     });
 }
 
-
 loadQuestion();
-const recupReponseAll = document.getElementsByClassName("reponse");
-const reponseAll = Array.from(recupReponseAll);
-
 
 
 function onSuivant() {
@@ -285,22 +285,7 @@ function onSuivant() {
     } else {
         loadQuestion();
     }
-    
-    
-
     console.log(reponseAll);
+
 }
-
-
-
-
-
-buttonSuivant.forEach((element) => {
-    element.addEventListener("click", onSuivant);
-})
-
-reponseAll.forEach((element) => {
-    element.addEventListener("click", onResponse);
-    
-})
 
