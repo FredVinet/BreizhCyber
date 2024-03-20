@@ -24,12 +24,12 @@ const difficuleDiv = Array.from(recupDifficulteDiv);
 
 
 const nbTotalQuestion = 8;
-let nbQuestionRep = 1;
+let nbQuestionRep = 0;
 let progressPercent;
 
 /** Convert json data object to array */
     /** Load Answers */
-    let recupAnswers = data[nbQuestionRep-1]["reponses"];
+    let recupAnswers = data[nbQuestionRep]["reponses"];
     let answers = [];
 
     for(var i in recupAnswers)
@@ -37,7 +37,7 @@ let progressPercent;
     /** ------------ */
 
     /** Load Correct Answer */
-    let recupAnswerCorrect = data[nbQuestionRep-1]["bonne_reponse"];
+    let recupAnswerCorrect = data[nbQuestionRep]["bonne_reponse"];
     let answerCorrect = [];
 
     for(var i in recupAnswerCorrect)
@@ -45,7 +45,7 @@ let progressPercent;
     /** ------------------- */
 
     /** Load Question */
-    let recupQuestion = data[nbQuestionRep-1]["question"];
+    let recupQuestion = data[nbQuestionRep]["question"];
     let questionRep = [];
     
     for(var i in recupQuestion)
@@ -53,7 +53,7 @@ let progressPercent;
     /** ------------- */
 
     /** Load Tips */
-    let recupQuestionTips = data[nbQuestionRep-1]["tips"];
+    let recupQuestionTips = data[nbQuestionRep]["tips"];
     let questionTipsRep = [];
 
     for(var i in recupQuestionTips)
@@ -61,7 +61,7 @@ let progressPercent;
     /** ------------- */
 
     /** Load Difficulte */
-    let recupTheme = data[nbQuestionRep-1]["theme"];
+    let recupTheme = data[nbQuestionRep]["theme"];
     let questionThemeRep = [];
 
     for(var i in recupTheme)
@@ -69,7 +69,7 @@ let progressPercent;
     /** ------------- */
 
     /** Load Difficulte */
-    let recupDifficulte = data[nbQuestionRep-1]["difficulte"];
+    let recupDifficulte = data[nbQuestionRep]["difficulte"];
     let questionDifficulteRep = [];
 
     for(var i in recupDifficulte)
@@ -103,7 +103,7 @@ function onResponse() {
 function loadQuestion() {
     /** Load Element */
         /** Load Answers */
-        recupAnswers = data[nbQuestionRep-1]["reponses"];
+        recupAnswers = data[nbQuestionRep]["reponses"];
         answers = [];
 
         for(var i in recupAnswers)
@@ -111,7 +111,7 @@ function loadQuestion() {
         /** ------------ */
 
         /** Load Correct Answer */
-        recupAnswerCorrect = data[nbQuestionRep-1]["bonne_reponse"];
+        recupAnswerCorrect = data[nbQuestionRep]["bonne_reponse"];
         answerCorrect = [];
 
         for(var i in recupAnswerCorrect)
@@ -119,7 +119,7 @@ function loadQuestion() {
         /** ------------------- */
 
         /** Load Question */
-        recupQuestion = data[nbQuestionRep-1]["question"];
+        recupQuestion = data[nbQuestionRep]["question"];
         questionRep = [];
         
         questionRep.push(recupQuestion);
@@ -127,7 +127,7 @@ function loadQuestion() {
         /** ------------- */
 
         /** Load Tips */
-        recupQuestionTips = data[nbQuestionRep-1]["tips"];
+        recupQuestionTips = data[nbQuestionRep]["tips"];
         questionTipsRep = [];
 
         questionTipsRep.push(recupQuestionTips);
@@ -135,7 +135,7 @@ function loadQuestion() {
         /** ------------- */
 
         /** Load Theme */
-        recupTheme = data[nbQuestionRep-1]["theme"];
+        recupTheme = data[nbQuestionRep]["theme"];
         questionThemeRep = [];
 
         questionThemeRep.push(recupTheme);
@@ -143,7 +143,7 @@ function loadQuestion() {
         /** ------------- */
 
         /** Load Difficulte */
-        recupDifficulte = data[nbQuestionRep-1]["difficulte"];
+        recupDifficulte = data[nbQuestionRep]["difficulte"];
         questionDifficulteRep = [];
 
         questionDifficulteRep.push(recupDifficulte);
@@ -167,8 +167,12 @@ function loadQuestion() {
     answerElement[0].innerHTML= "";
 
     tips[0].innerHTML = `
-    <div class="contenuTIPS container-fluid row mb-4 mt-2">
-        <div class="">Tips</div>
+    <div class="contenuTIPS container-fluid row mb-40 mt-10">
+        <div class="position-relative mt-2" style="min-height: 2rem;">
+            <div class="col-2 col-lg-2 position-absolute top-0 start-0 badge bg-secondary text-primary" style="min-height: 2em;">
+                <div class="text position-absolute top-50 start-50 translate-middle">Tips</div>
+            </div>
+        </div>
         <div class="col-10 m-auto">${questionTipsRep[0]}</div>
     </div>
     <div class="position-relative">
