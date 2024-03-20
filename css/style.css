@@ -1,0 +1,10 @@
+.background{
+  background-image: url("../img/background.png");
+  background-size: cover;
+  z-index: 0;
+  opacity: 0.6;
+}
+
+.cadre, .tips, .progress, .progress-bar{
+  z-index: 999;
+}

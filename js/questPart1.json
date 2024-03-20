@@ -1,0 +1,114 @@
+[
+  {
+    "id": 1,
+    "theme": "Hameçonnage",
+    "question": "Quel est un signe courant d'un email de hameçonnage ?",
+    "bonne_reponse": "B",
+    "difficulte": "Facile",
+    "tips": "Les entreprises légitimes ne demandent pas d'informations personnelles par email.",
+    "reponses": {
+      "A": "L'email provient d'une adresse officielle.",
+      "B": "L'email demande des informations personnelles ou financières.",
+      "C": "L'email ne contient aucun lien.",
+      "D": "L'email est parfaitement bien écrit, sans aucune faute."
+    }
+  },
+  {
+    "id": 2,
+    "theme": "Hameçonnage",
+    "question": "Que devez-vous faire si vous recevez un email suspect vous semblant être un hameçonnage ?",
+    "bonne_reponse": "D",
+    "difficulte": "Facile",
+    "tips": "Les bonnes pratiques lors de la récéption d'un email semblant suspect.",
+    "reponses": {
+      "A": "Répondre à l'email pour demander plus d'informations.",
+      "B": "Cliquer sur les liens pour vérifier où ils mènent.",
+      "C": "Transférer l'email à tous vos contacts pour les avertir.",
+      "D": "Ne cliquez sur aucun lien et signalez l'email comme spam ou phishing."
+    }
+  },
+  {
+    "id": 3,
+    "theme": "Gestion des accès",
+    "question": "Pourquoi est-il important d'avoir des mots de passe différents pour chaque compte en ligne ?",
+    "bonne_reponse": "B",
+    "difficulte": "Facile",
+    "tips": "Si un pirate obtient votre mot de passe pour un service, que se passe-t-il si vous utilisez le même mot de passe ailleurs ?",
+    "reponses": {
+      "A": "Cela rend plus facile de se souvenir des mots de passe.",
+      "B": "Cela augmente la sécurité en limitant l'impact si un mot de passe est compromis. ",
+      "C": "Cela permet de synchroniser les comptes plus facilement.",
+      "D": "Cela accélère le processus de connexion."
+    }
+  },
+  {
+    "id": 4,
+    "theme": "Gestion des accès",
+    "question": "Quelle est la meilleure pratique pour créer un mot de passe sécurisé ?",
+    "bonne_reponse": "C",
+    "difficulte": "Facile",
+    "tips": "Un mot de passe fort est comme une recette secrète. Plus il y a d'ingrédients variés et inattendus, mieux c'est.",
+    "reponses": {
+      "A": "Utiliser le nom de votre animal de compagnie",
+      "B": "Garder le même mot de passe pour tous les comptes pour ne pas l'oublier.",
+      "C": "Utiliser une phrase de passe complexe mêlant lettres, chiffres et symboles",
+      "D": "Choisir une suite simple de chiffres, comme votre date de naissance."
+    }
+  },
+  {
+    "id": 5,
+    "theme": "Piratage",
+    "question": "Qu'est-ce qu'une attaque par force brute ?",
+    "bonne_reponse": "C",
+    "difficulte": "Facile",
+    "tips": "Il y a un rapport avec les mots de passes",
+    "reponses": {
+      "A": "L'utilisation de logiciels malveillants pour prendre le contrôle d'un système",
+      "B": "L'envoi de courriels frauduleux pour obtenir des informations sensibles",
+      "C": "L'essai répété de combinaisons de mots de passe jusqu'à en trouver un valide",
+      "D": "L'exploitation des vulnérabilités logicielles pour accéder à des systèmes non autorisés"
+    }
+  },
+  {
+    "id": 6,
+    "theme": "Piratage",
+    "question": "Quelle est une méthode courante utilisée par les pirates pour accéder illégalement à des systèmes informatiques ?",
+    "bonne_reponse": "A",
+    "difficulte": "Facile",
+    "tips": "Les pirates exploitent souvent la confiance des utilisateurs.",
+    "reponses": {
+      "A": "Offrir un logiciel gratuit qui contient en réalité un logiciel malveillant.",
+      "B": "Envoyer des emails de félicitations pour un prix gagné.",
+      "C": "Appeler directement les utilisateurs pour leur demander leur mot de passe.",
+      "D": "Publier des annonces sur des sites web légitimes."
+    }
+  },
+  {
+    "id": 7,
+    "theme": "Réponses aux incidents",
+    "question": "Que devez-vous faire en premier si vous pensez que votre ordinateur a été infecté par un virus ?",
+    "bonne_reponse": "D",
+    "difficulte": "Facile",
+    "tips": "La première étape est d'empêcher la propagation du virus à d'autres systèmes ou fichiers.",
+    "reponses": {
+      "A": "Continuer à utiliser l'ordinateur pour voir si le problème se résout de lui-même.",
+      "B": "Télécharger plus de logiciels pour essayer de résoudre le problème.",
+      "C": "Envoyer un email à tous vos contacts pour les informer",
+      "D": "Éteindre immédiatement l'ordinateur et le déconnecter d'Internet."
+    }
+  },
+  {
+    "id": 8,
+    "theme": "Réponses aux incidents",
+    "question": "À qui devez-vous signaler un incident de sécurité informatique dans votre entreprise ?",
+    "bonne_reponse": "C",
+    "difficulte": "Facile",
+    "tips": " Il est crucial d'informer rapidement les professionnels qui ont les compétences et les responsabilités pour gérer ce type d'incident.",
+    "reponses": {
+      "A": "À personne, pour éviter de causer une panique.",
+      "B": "À vos collègues via les réseaux sociaux pour obtenir de l'aide.",
+      "C": "À l'équipe informatique ou à la personne responsable de la sécurité des informations.",
+      "D": "À toutes les personnes de l'entreprise pour les avertir."
+    }
+  }
+]
