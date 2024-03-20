@@ -1,4 +1,4 @@
-import data from "./questPart1.json" assert { type: "json" };
+import data from "./questPart2.json" assert { type: "json" };
 
 
 const recupAnswerElementHTML = document.getElementsByClassName("answers");
@@ -6,6 +6,9 @@ const answerElement = Array.from(recupAnswerElementHTML);
 
 const recupTips = document.getElementsByClassName("tips");
 const tips = Array.from(recupTips);
+
+const recupButtonSuivant = document.getElementsByClassName("btnSuivant");
+const buttonSuivant = Array.from(recupButtonSuivant);
 
 const recupProgressBar = document.getElementsByClassName("progress-bar");
 const progressBar = Array.from(recupProgressBar);
@@ -19,11 +22,8 @@ const themeDiv = Array.from(recupThemeDiv);
 const recupDifficulteDiv = document.getElementsByClassName("difficulte");
 const difficuleDiv = Array.from(recupDifficulteDiv);
 
-const recupReponseAll = document.getElementsByClassName("reponse");
-const reponseAll = Array.from(recupReponseAll);
 
-
-const nbTotalQuestion = 8;
+const nbTotalQuestion = 48;
 let nbQuestionRep = 0;
 let progressPercent;
 
@@ -32,16 +32,15 @@ let progressPercent;
     let recupAnswers = data[nbQuestionRep]["reponses"];
     let answers = [];
 
-    let i;
-    for(i in recupAnswers)
-        answers.push([i, recupAnswers[i]]);
+    for(var i in recupAnswers)
+    answers.push([i, recupAnswers[i]]);
     /** ------------ */
 
     /** Load Correct Answer */
     let recupAnswerCorrect = data[nbQuestionRep]["bonne_reponse"];
     let answerCorrect = [];
 
-    for(i in recupAnswerCorrect)
+    for(var i in recupAnswerCorrect)
     answerCorrect.push([recupAnswerCorrect[i]]);
     /** ------------------- */
 
@@ -49,7 +48,7 @@ let progressPercent;
     let recupQuestion = data[nbQuestionRep]["question"];
     let questionRep = [];
     
-    for(i in recupQuestion)
+    for(var i in recupQuestion)
     questionRep.push([recupQuestion[i]]);
     /** ------------- */
 
@@ -57,7 +56,7 @@ let progressPercent;
     let recupQuestionTips = data[nbQuestionRep]["tips"];
     let questionTipsRep = [];
 
-    for(i in recupQuestionTips)
+    for(var i in recupQuestionTips)
         questionTipsRep.push([recupQuestionTips[i]]);
     /** ------------- */
 
@@ -65,7 +64,7 @@ let progressPercent;
     let recupTheme = data[nbQuestionRep]["theme"];
     let questionThemeRep = [];
 
-    for(i in recupTheme)
+    for(var i in recupTheme)
         questionThemeRep.push([recupTheme[i]]);
     /** ------------- */
 
@@ -73,13 +72,9 @@ let progressPercent;
     let recupDifficulte = data[nbQuestionRep]["difficulte"];
     let questionDifficulteRep = [];
 
-    for(i in recupDifficulte)
+    for(var i in recupDifficulte)
         questionDifficulteRep.push([recupDifficulte[i]]);
     /** ------------- */
-
-    let nbReponsesCorrectes = 0;
-    let nbReponsesIncorrectes = 0;  
-    let reponseDonnee = false;    
 
 /** --------------------------------- */
 
@@ -88,24 +83,13 @@ function onResponse() {
     const answer = this.getAttribute("answer");
 
     this.style = "background-color: #fff; border-radius: 1em; min-height: 5em;"
-    if (reponseDonnee) return; // Si une réponse a déjà été donnée, ne fait rien
-    reponseDonnee = true; // Marque qu'une réponse a été donnée
-
-
-    if(answer == data[nbQuestionRep]["bonne_reponse"]){
-        this.style = "background-color: rgba(138, 247, 138, 1); border-radius: 1em; min-height: 5em;";
-        nbReponsesCorrectes++;
-    }else{
-        this.style = "background-color: rgba(246, 159, 159, 1); border-radius: 1em; min-height: 5em;";
-        nbReponsesIncorrectes++;
-    }
 
     console.log(typeof answer);
     console.log(typeof answerCorrect[0]);
 
-    if((answer === answerCorrect) && (tips[0].classList.contains("d-none"))){
+    if((answer == answerCorrect) && (tips[0].classList.contains("d-none"))){
         this.style = "background-color: rgba(138, 247, 138, 1); border-radius: 1em; min-height: 5em;"
-    }else if((answer !== answerCorrect[0]) && (tips[0].classList.contains("d-none"))){
+    }else if((answer != answerCorrect[0]) && (tips[0].classList.contains("d-none"))){
         this.style = "background-color: rgba(246, 159, 159, 1); border-radius: 1em; min-height: 5em;"
     }else{
         this.style = "background-color: #f1f1f1; border-radius: 1em; min-height: 5em;"
@@ -113,22 +97,16 @@ function onResponse() {
 
     tips[0].classList.remove("d-none");
     
-    // Désactiver les boutons de réponse après le choix
-    answerElement[0].childNodes.forEach(child => {
-        child.style.pointerEvents = "none";
-    });
-    
     console.log("click");
-}
+};
 
 function loadQuestion() {
     /** Load Element */
-        let i;
-    /** Load Answers */
+        /** Load Answers */
         recupAnswers = data[nbQuestionRep]["reponses"];
         answers = [];
 
-        for(i in recupAnswers)
+        for(var i in recupAnswers)
         answers.push([i, recupAnswers[i]]);
         /** ------------ */
 
@@ -136,7 +114,7 @@ function loadQuestion() {
         recupAnswerCorrect = data[nbQuestionRep]["bonne_reponse"];
         answerCorrect = [];
 
-        for(i in recupAnswerCorrect)
+        for(var i in recupAnswerCorrect)
         answerCorrect.push([recupAnswerCorrect[i]]);
         /** ------------------- */
 
@@ -189,21 +167,19 @@ function loadQuestion() {
     answerElement[0].innerHTML= "";
 
     tips[0].innerHTML = `
-        <div class="indication">
-            <div class="position-relative mt-2" style="min-height: 2rem;">
-                <div class="col-2 col-lg-2 position-absolute top-0 start-0 badge bg-secondary text-primary" style="min-height: 2em;">
-                    <div class="text position-absolute top-50 start-50 translate-middle">Tips</div>
-                </div>
+    <div class="contenuTIPS container-fluid row mb-40 mt-10">
+        <div class="position-relative mt-2" style="min-height: 2rem;">
+            <div class="col-2 col-lg-2 position-absolute top-0 start-0 badge bg-secondary text-primary" style="min-height: 2em;">
+                <div class="text position-absolute top-50 start-50 translate-middle">Tips</div>
             </div>
         </div>
-        <div class="contenu mb-4">
-            <div class="col-10 m-auto">${questionTipsRep[0]}</div>
-        </div>
-        <div class="position-relative">
-            <button type="button" class="btnSuivant btn btn-primary col-1 position-absolute bottom-100 end-0 mb-1" style="background-color: #494949;">
-                Suivant
-            </button>
-        </div>
+        <div class="col-10 m-auto">${questionTipsRep[0]}</div>
+    </div>
+    <div class="position-relative">
+        <button type="button" class="btnSuivant btn btn-primary col-1 position-absolute bottom-100 end-0 mb-1" style="background-color: #494949;">
+            Suivant
+        </button>
+    </div>
     `
     tips[0].classList.add("d-none");
 
@@ -250,9 +226,9 @@ function loadQuestion() {
     const recupNewAnswer = document.getElementsByClassName("reponse");
     const newRep = Array.from(recupNewAnswer);
 
-    newRep.forEach(element => {
-        element.style.pointerEvents = "auto"; // Réactiver les événements de pointeur
+    newRep.forEach((element) => {
         element.addEventListener("click", onResponse);
+        
     });
 
     const recupNewButton = document.getElementsByClassName("btnSuivant");
@@ -264,28 +240,33 @@ function loadQuestion() {
     });
 }
 
+
 loadQuestion();
+const recupReponseAll = document.getElementsByClassName("reponse");
+const reponseAll = Array.from(recupReponseAll);
+
 
 
 function onSuivant() {
     nbQuestionRep++;
     // id random
-    reponseDonnee = false; // Permet de répondre à la nouvelle question
 
     answers = ["a", "c", "d", "b"]
-    
-    if (nbQuestionRep == nbTotalQuestion) {
-        // Mettre à jour le contenu de la modal avec les résultats
-        document.getElementById("correctAnswers").innerText = `Réponses correctes : ${nbReponsesCorrectes}`;
-        document.getElementById("incorrectAnswers").innerText = `Réponses incorrectes : ${nbReponsesIncorrectes}`;
+    loadQuestion();
 
-        // Afficher la modal
-        var resultModal = new bootstrap.Modal(document.getElementById('resultModal'), {});
-        resultModal.show();
-    } else {
-        loadQuestion();
-    }
     console.log(reponseAll);
-
 }
+
+
+
+
+
+buttonSuivant.forEach((element) => {
+    element.addEventListener("click", onSuivant);
+})
+
+reponseAll.forEach((element) => {
+    element.addEventListener("click", onResponse);
+    
+})
 
