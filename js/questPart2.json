@@ -1,0 +1,674 @@
+[
+  {
+    "id": 1,
+    "theme": "Hameçonnage",
+    "question": "Quel est un signe courant d'un e-mail de hameçonnage ?",
+    "bonne_reponse": "C",
+    "difficulte": "Facile",
+    "tips": "Les pirates ne prennent pas toujours le temps de corriger leur texte.",
+    "reponses": {
+      "A": "Utilisation d'un langage formel",
+      "B": "Présence d'une signature officiell",
+      "C": "Des fautes d'orthographe et de grammaire",
+      "D": "Mention de votre nom complet"
+    }
+  },
+  {
+    "id": 2,
+    "theme": "Hameçonnage",
+    "question": "Que devriez-vous vérifier si vous soupçonnez un e-mail d'être une tentative de hameçonnage ?",
+    "bonne_reponse": "B",
+    "difficulte": "Facile",
+    "tips": "L'adresse peut sembler légitime à première vue, mais souvent elle contient de petits écarts.",
+    "reponses": {
+      "A": "La couleur de l'e-mail",
+      "B": "L'adresse e-mail de l'expéditeur",
+      "C": " Le nombre de destinataires",
+      "D": "La taille du fichier joint"
+    }
+  },
+  {
+    "id": 3,
+    "theme": "Hameçonnage",
+    "question": "Que faire si vous recevez un e-mail suspect ?",
+    "bonne_reponse": "D",
+    "difficulte": "Facile",
+    "tips": "Ne prenez aucun risque avec les e-mails douteux.",
+    "reponses": {
+      "A": " Répondre pour demander des clarifications",
+      "B": "Transférer l'e-mail à un ami pour avis",
+      "C": "Cliquer sur tous les liens pour vérifier",
+      "D": "Supprimer immédiatement l'e-mail "
+    }
+  },
+  {
+    "id": 4,
+    "theme": "Hameçonnage",
+    "question": "Un e-mail de hameçonnage peut prétendre venir de quelle source ?",
+    "bonne_reponse": "D",
+    "difficulte": "Facile",
+    "tips": "Les pirates tentent d'imiter des sources fiables pour vous tromper.",
+    "reponses": {
+      "A": "Un ami demandant de l'aide financière",
+      "B": "Un service en ligne vous alertant d'une activité suspecte sur votre compte",
+      "C": "Un service en ligne vous alertant d'une activité suspecte sur votre compte",
+      "D": "Toutes les réponses sont correctes"
+    }
+  },
+  {
+    "id": 5,
+    "theme": "Hameçonnage",
+    "question": "Comment les hameçonneurs utilisent-ils souvent les informations personnelles trouvées en ligne pour cibler leurs victimes ?",
+    "bonne_reponse": "A",
+    "difficulte": "Moyen",
+    "tips": "Le ciblage personnalisé rend les attaques plus convaincantes.",
+    "reponses": {
+      "A": "En créant des messages personnalisés qui semblent légitimes",
+      "B": "En envoyant des spams aléatoires à des millions d'adresses",
+      "C": "En publiant des informations sur les forums",
+      "D": "En changeant régulièrement leurs techniques"
+    }
+  },
+  {
+    "id": 6,
+    "theme": "Hameçonnage",
+    "question": "Quelle technique les hameçonneurs n'utilisent-ils pas pour recueillir des informations ?",
+    "bonne_reponse": "C",
+    "difficulte": "Moyen",
+    "tips": "Généralement ou se fait le hameçonnage ?",
+    "reponses": {
+      "A": "Leur demander directement dans un e-mail",
+      "B": "Utiliser des logiciels malveillants pour infiltrer des ordinateurs",
+      "C": "Observer les victimes en personne",
+      "D": "Exploiter les failles de sécurité des sites web"
+    }
+  },
+  {
+    "id": 7,
+    "theme": "Hameçonnage",
+    "question": "Quel est un bon moyen de vérifier l'authenticité d'un lien dans un e-mail suspect ?",
+    "bonne_reponse": "B",
+    "difficulte": "Moyen",
+    "tips": "L'action peut révéler la destination",
+    "reponses": {
+      "A": "Cliquer dessus pour voir où il mène",
+      "B": " Le survoler avec votre souris pour voir l'URL sans cliquer",
+      "C": "L'envoyer à un ami pour avis",
+      "D": "Le rechercher sur Google"
+    }
+  },
+  {
+    "id": 8,
+    "theme": "Hameçonnage",
+    "question": "Quelle est une caractéristique d'un site web utilisé dans le hameçonnage ?",
+    "bonne_reponse": "D",
+    "difficulte": "Moyen",
+    "tips": "La sécurité d'un site peut souvent être déterminée par le début de son URL",
+    "reponses": {
+      "A": "Un certificat SSL",
+      "B": "Une navigation facile",
+      "C": "Un design moderne et professionnel",
+      "D": "Une URL commençant par \"http://\" au lieu de \"https://\""
+    }
+  },
+  {
+    "id": 9,
+    "theme": "Hameçonnage",
+    "question": "Quelle est la meilleure façon de gérer les pièces jointes dans les e-mails de sources inconnues ?",
+    "bonne_reponse": "C",
+    "difficulte": "Difficile",
+    "tips": "La prudence est primordiale avec les pièces jointes, qui peuvent contenir des logiciels malveillants.",
+    "reponses": {
+      "A": " Les ouvrir pour vérifier leur contenu",
+      "B": "Les enregistrer sur votre ordinateur avant de les ouvrir",
+      "C": "Ne jamais les ouvrir sans avoir d'abord vérifié l'expéditeur avec un outil antivirus",
+      "D": "Les transférer à votre service informatique sans les ouvrir"
+    }
+  },
+  {
+    "id": 10,
+    "theme": "Hameçonnage",
+    "question": "Comment pouvez-vous vérifier l'authenticité d'un message vous demandant des informations sensibles ?",
+    "bonne_reponse": "B",
+    "difficulte": "Difficile",
+    "tips": "Utiliser des moyens de contact officiels et indépendants de l'email reçu est la manière la plus sûre de vérifier l'authenticité.",
+    "reponses": {
+      "A": "En répondant directement au message",
+      "B": "En contactant l'organisation par un moyen de communication officiel et vérifié, ou un site web sécurisé",
+      "C": "En demandant l'avis de vos amis sur les réseaux sociaux",
+      "D": "En vérifiant si d'autres ont reçu des messages similaires"
+    }
+  },
+  {
+    "id": 11,
+    "theme": "Hameçonnage",
+    "question": "Quelle mesure préventive n'est pas efficace contre le hameçonnage ?",
+    "bonne_reponse": "C",
+    "difficulte": "Difficile",
+    "tips": "Attention à vos action lors des vérifications",
+    "reponses": {
+      "A": "Installer un logiciel antivirus et le garder à jour",
+      "B": "Utiliser des gestionnaires de mots de passe pour éviter de saisir des informations sur des sites douteux",
+      "C": "Cliquer sur les liens des e-mails pour confirmer leur destination",
+      "D": "Éduquer les employés et les utilisateurs sur les signes de hameçonnage"
+    }
+  },
+  {
+    "id": 12,
+    "theme": "Hameçonnage",
+    "question": "Quelle technique avancée les cybercriminels utilisent-ils pour rendre le hameçonnage plus convaincant en imitant de manière crédible l'apparence d'un site Web légitime ?",
+    "bonne_reponse": "C",
+    "difficulte": "Difficile",
+    "tips": " Cette technique exploite les similitudes visuelles entre les caractères de différents alphabets pour créer des URLs presque identiques à celles de sites légitimes",
+    "reponses": {
+      "A": "Insertion d'images haute résolution du site officiel",
+      "B": "Utilisation de certificats SSL/TLS falsifiés",
+      "C": "Homographie de noms de domaine",
+      "D": "Publication de commentaires positifs sur le faux site"
+    }
+  },
+  {
+    "id": 13,
+    "theme": "Gestion des accès",
+    "question": "Pourquoi est-il important de changer régulièrement de mot de passe ?",
+    "bonne_reponse": "B",
+    "difficulte": "Facile",
+    "tips": "Les mots de passe sont comme des serrures numériques; changer la serrure peut empêcher les intrus d'entre",
+    "reponses": {
+      "A": " Pour améliorer la vitesse de connexion",
+      "B": "Pour réduire le risque d'accès non autorisé si un mot de passe est compromis",
+      "C": "Pour occuper le service informatique",
+      "D": "Pour tester la mémoire des employés"
+    }
+  },
+  {
+    "id": 14,
+    "theme": "Gestion des accès",
+    "question": "Qu'est-ce qu'une authentification à deux facteurs (2FA) ?",
+    "bonne_reponse": "C",
+    "difficulte": "Facile",
+    "tips": "2FA ajoute une couche de sécurité en combinant quelque chose que vous connaissez avec quelque chose que vous possédez.",
+    "reponses": {
+      "A": "Utiliser deux mots de passe différents pour se connecter",
+      "B": "Avoir deux comptes utilisateurs pour chaque service",
+      "C": "L'utilisation d'un mot de passe et d'un autre élément pour se connecter",
+      "D": "Changer de mot de passe tous les deux jours"
+    }
+  },
+  {
+    "id": 15,
+    "theme": "Gestion des accès",
+    "question": "Pourquoi est-il conseillé d'utiliser des mots de passe complexes ?",
+    "bonne_reponse": "B",
+    "difficulte": "Facile",
+    "tips": " Un bon mot de passe est comme un coffre-fort numérique plus il est complexe, plus il est difficile à forcer.",
+    "reponses": {
+      "A": "Ils sont plus faciles à retenir",
+      "B": "Ils offrent une meilleure protection contre les tentatives de devinette et les attaques automatisées ",
+      "C": "Ils sont plus rapides à taper",
+      "D": "Ils sont requis pour toutes les applications"
+    }
+  },
+  {
+    "id": 16,
+    "theme": "Gestion des accès",
+    "question": "Que signifie avoir des permissions d'accès basées sur le principe du moindre privilège ?",
+    "bonne_reponse": "B",
+    "difficulte": "Facile",
+    "tips": "Réduire le risque",
+    "reponses": {
+      "A": "Donner à tous les utilisateurs l'accès à toutes les ressources",
+      "B": "Limiter l'accès des utilisateurs aux ressources strictement nécessaires pour leur travail",
+      "C": "Accorder plus de droits d'accès aux nouveaux utilisateurs",
+      "D": "Changer les permissions d'accès tous les jours"
+    }
+  },
+  {
+    "id": 17,
+    "theme": "Gestion des accès",
+    "question": "Qu'est-ce qu'une politique de mot de passe forte devrait inclure ?",
+    "bonne_reponse": "D",
+    "difficulte": "Moyen",
+    "tips": "Une combinaison complexe rend le mot de passe plus résistant contre les attaques.",
+    "reponses": {
+      "A": "Uniquement des lettres",
+      "B": "Un mot de passe basé sur des informations personnelles facilement devinables",
+      "C": "Le même mot de passe pour tous les comptes",
+      "D": "Des lettres, chiffres, et symboles spéciaux, avec une longueur minimale"
+    }
+  },
+  {
+    "id": 18,
+    "theme": "Gestion des accès",
+    "question": "Pourquoi est-il important de révoquer les droits d'accès d'un employé qui quitte l'entreprise ?",
+    "bonne_reponse": "A",
+    "difficulte": "Moyen",
+    "tips": "Sécuriser l'accès après le départ d'un employé aide à protéger les ressources de l'entreprise.",
+    "reponses": {
+      "A": "Pour éviter tout accès non autorisé ou malveillant après son départ",
+      "B": "Pour lui faire une surprise",
+      "C": "Pour libérer de l'espace sur le réseau",
+      "D": "Pour tester la procédure de révocation d'accès"
+    }
+  },
+  {
+    "id": 19,
+    "theme": "Gestion des accès",
+    "question": "Quel est l'avantage d'utiliser un gestionnaire de mots de passe ?",
+    "bonne_reponse": "D",
+    "difficulte": "Moyen",
+    "tips": "Centraliser la gestion des mots de passe peut améliorer la sécurité tout en simplifiant la mémorisation.",
+    "reponses": {
+      "A": " Il choisit automatiquement le meilleur mot de passe pour chaque site",
+      "B": "Il partage vos mots de passe avec le service informatique",
+      "C": "Il rend inutile l'utilisation de mots de passe",
+      "D": "Il permet de stocker tous vos mots de passe en un seul endroit sécurisé"
+    }
+  },
+  {
+    "id": 20,
+    "theme": "Gestion des accès",
+    "question": "Qu'est-ce qu'une attaque par force brute ?",
+    "bonne_reponse": "C",
+    "difficulte": "Moyen",
+    "tips": "Une méthode qui repose sur la persévérance",
+    "reponses": {
+      "A": "Deviner un mot de passe en utilisant une liste de mots communs",
+      "B": "Attaquer physiquement un ordinateur",
+      "C": "Essayer systématiquement toutes les combinaisons possibles jusqu'à trouver le bon mot de passe",
+      "D": "Envoyer un grand nombre d'emails de phishing en espérant qu'une victime morde à l'hameçon"
+    }
+  },
+  {
+    "id": 21,
+    "theme": "Gestion des accès",
+    "question": "Quelle pratique est recommandée pour gérer les droits d'accès des comptes privilégiés ?",
+    "bonne_reponse": "D",
+    "difficulte": "Difficile",
+    "tips": "Partager des informations d'identification augmente le risque de compromission.",
+    "reponses": {
+      "A": "Rotation fréquente des mots de passe",
+      "B": " Utilisation partagée pour simplifier la gestion",
+      "C": "Mêmes droits d'accès pour tous les administrateurs",
+      "D": "Authentification multi-facteurs obligatoire"
+    }
+  },
+  {
+    "id": 22,
+    "theme": "Gestion des accès",
+    "question": "Quel est l'impact principal d'une implémentation SSO mal configurée ?",
+    "bonne_reponse": "C",
+    "difficulte": "Difficile",
+    "tips": "Un seul point de défaillance peut compromettre de multiples services.",
+    "reponses": {
+      "A": "Augmentation de la convivialité",
+      "B": "Diminution des mots de passe à retenir",
+      "C": "Point unique de défaillance critique ",
+      "D": " Simplification de la gestion des accès"
+    }
+  },
+  {
+    "id": 23,
+    "theme": "Gestion des accès",
+    "question": "Pourquoi est-il crucial de surveiller les sessions actives des utilisateurs sur des systèmes critiques ?",
+    "bonne_reponse": "B",
+    "difficulte": "Difficile",
+    "tips": " L'analyse du comportement utilisateur peut révéler des accès non autorisés.",
+    "reponses": {
+      "A": "Pour optimiser les performances du système",
+      "B": "Pour détecter des comportements anormaux indiquant une éventuelle compromission ",
+      "C": "Pour limiter le nombre d'utilisateurs connectés",
+      "D": "Pour encourager une utilisation active du système"
+    }
+  },
+  {
+    "id": 24,
+    "theme": "Gestion des accès",
+    "question": "Dans le contexte de la gestion des identités et des accès (IAM), quelle technologie avancée permet une vérification d'identité plus sécurisée en analysant des caractéristiques physiques ou comportementales uniques ?",
+    "bonne_reponse": "B",
+    "difficulte": "Difficile",
+    "tips": "Seul un utilisateur est censé le posséder",
+    "reponses": {
+      "A": "Authentification par mot de passe unique",
+      "B": "Biométrie",
+      "C": " Cartes à puce",
+      "D": " Questions de sécurité personnalisées"
+    }
+  },
+  {
+    "id": 25,
+    "theme": "Piratage",
+    "question": "Utilisez-vous un gestionnaire de mots de passe pour sécuriser vos mots de passe ?",
+    "bonne_reponse": "A",
+    "difficulte": "Facile",
+    "tips": "L'utilisation d'un gestionnaire de mots de passe permet de créer des mots de passe forts et uniques pour chaque compte, réduisant ainsi le risque de piratage par force brute ou suite à une fuite de données.",
+    "reponses": {
+      "A": "Oui",
+      "B": "Non",
+      "C": "",
+      "D": ""
+    }
+  },
+  {
+    "id": 26,
+    "theme": "Piratage",
+    "question": "Le phishing consiste-t-il à :",
+    "bonne_reponse": "A",
+    "difficulte": "Facile",
+    "tips": "Reconnaître les tentatives de phishing est crucial pour éviter de divulguer involontairement des informations sensibles. Il est recommandé de vérifier l'origine des e-mails et de ne pas cliquer sur les liens suspects.",
+    "reponses": {
+      "A": "Envoyer des e-mails pour tenter de récupérer des informations personnelles",
+      "B": "Créer un virus informatique",
+      "C": "Sécuriser un réseau informatique",
+      "D": "Programmer des jeux vidéo"
+    }
+  },
+  {
+    "id": 27,
+    "theme": "Piratage",
+    "question": "Faut-il mettre à jour régulièrement vos logiciels et systèmes d'exploitation pour renforcer la sécurité ?",
+    "bonne_reponse": "A",
+    "difficulte": "Facile",
+    "tips": " Les mises à jour contiennent souvent des correctifs pour les vulnérabilités de sécurité découvertes récemment, ce qui aide à protéger votre système contre les attaques exploitant ces faiblesses.",
+    "reponses": {
+      "A": "Oui",
+      "B": "Non",
+      "C": "",
+      "D": ""
+    }
+  },
+  {
+    "id": 28,
+    "theme": "Piratage",
+    "question": "Est-il sécuritaire d'utiliser le même mot de passe pour plusieurs comptes en ligne ?",
+    "bonne_reponse": "B",
+    "difficulte": "Facile",
+    "tips": "Utiliser le même mot de passe pour plusieurs comptes augmente le risque qu'un pirate accède à plusieurs de vos comptes si l'un d'eux est compromis. Il est préférable d'utiliser des mots de passe uniques pour chaque compte.",
+    "reponses": {
+      "A": "Oui",
+      "B": "Non",
+      "C": "",
+      "D": ""
+    }
+  },
+  {
+    "id": 29,
+    "theme": "Piratage",
+    "question": "Quel type d'attaque consiste à surcharger un serveur avec un trafic excessif pour le rendre indisponible ?",
+    "bonne_reponse": "B",
+    "difficulte": "Moyen",
+    "tips": "Les attaques DDoS peuvent rendre les services en ligne inaccessibles. Pour se protéger, les entreprises peuvent utiliser des services de mitigation des DDoS qui filtrent le trafic malveillant.",
+    "reponses": {
+      "A": "Hameçonnage",
+      "B": "Attaque par déni de service (DDoS)",
+      "C": "Ingénierie sociale",
+      "D": "Malware"
+    }
+  },
+  {
+    "id": 30,
+    "theme": "Piratage",
+    "question": "Les VPN (réseaux privés virtuels) servent à :",
+    "bonne_reponse": "B",
+    "difficulte": "Moyen",
+    "tips": "Les VPN protègent votre vie privée en ligne en masquant votre adresse IP et en chiffrant votre trafic Internet, ce qui est particulièrement important sur les réseaux Wi-Fi publics non sécurisés.",
+    "reponses": {
+      "A": "Accélérer la connexion Internet",
+      "B": "Créer une connexion sécurisée sur un réseau public",
+      "C": "Infecter un ordinateur avec des logiciels malveillants",
+      "D": "Augmenter la capacité de stockage sur le cloud"
+    }
+  },
+  {
+    "id": 31,
+    "theme": "Piratage",
+    "question": "Un pare-feu (firewall) sert à :",
+    "bonne_reponse": "A",
+    "difficulte": "Moyen",
+    "tips": "Les pare-feu jouent un rôle crucial dans la prévention des accès non autorisés à votre réseau, en filtrant le trafic selon des règles prédéfinies pour bloquer les menaces potentielles.",
+    "reponses": {
+      "A": "Surveiller et contrôler le trafic réseau entrant et sortant selon des règles de sécurité définies",
+      "B": "Stocker des données en ligne",
+      "C": "Accélérer votre connexion Internet",
+      "D": "Créer des mots de passe"
+    }
+  },
+  {
+    "id": 32,
+    "theme": "Piratage",
+    "question": "Qu'est-ce qu'un ransomware ?",
+    "bonne_reponse": "A",
+    "difficulte": "Moyen",
+    "tips": "Les attaques par ransomware peuvent être dévastatrices. Il est essentiel de maintenir des sauvegardes régulières de vos données importantes sur des supports non connectés à Internet pour pouvoir les restaurer en cas d'attaque.",
+    "reponses": {
+      "A": "Un logiciel qui chiffre les fichiers d'un utilisateur et demande une rançon pour les déchiffrer",
+      "B": "Un logiciel qui permet de naviguer anonymement sur internet",
+      "C": "Un outil de gestion de mots de passe",
+      "D": "Un système d'exploitation sécurisé"
+    }
+  },
+  {
+    "id": 33,
+    "theme": "Piratage",
+    "question": "La méthode de l'empreinte numérique (fingerprinting) des navigateurs permet de :",
+    "bonne_reponse": "A",
+    "difficulte": "Difficile",
+    "tips": "La prise de conscience de l'empreinte numérique est importante pour la confidentialité en ligne. L'utilisation de navigateurs axés sur la confidentialité ou d'extensions bloquant le tracking peut aider à réduire le tracking par empreinte numérique.",
+    "reponses": {
+      "A": " Identifier et suivre les utilisateurs en ligne en collectant des informations sur leur navigateur et leur appareil",
+      "B": "Bloquer l'accès aux sites web dangereux",
+      "C": "Accélérer le chargement des pages web",
+      "D": "Chiffrer les e-mails"
+    }
+  },
+  {
+    "id": 34,
+    "theme": "Piratage",
+    "question": "Qu'est-ce que le \"sandboxing\" ?",
+    "bonne_reponse": "B",
+    "difficulte": "Difficile",
+    "tips": "Le sandboxing est une mesure de sécurité qui exécute des programmes ou des fichiers dans un environnement isolé pour empêcher les logiciels malveillants de causer des dommages au système plus large. Cela permet aux utilisateurs de tester des logiciels inconnus sans risque",
+    "reponses": {
+      "A": "Un jeu vidéo compétitif",
+      "B": "Une technique pour isoler des applications potentiellement malveillantes",
+      "C": "Un processus de développement logiciel",
+      "D": "Une méthode de cryptage des données"
+    }
+  },
+  {
+    "id": 35,
+    "theme": "Piratage",
+    "question": "L'authentification multifacteurs (MFA) est utilisée pour :",
+    "bonne_reponse": "C",
+    "difficulte": "Difficile",
+    "tips": "L'authentification multifacteurs améliore considérablement la sécurité des comptes en exigeant une preuve d'identité supplémentaire au-delà du simple mot de passe, réduisant ainsi le risque d'accès non autorisé même si le mot de passe est compromis",
+    "reponses": {
+      "A": "Accélérer le processus de connexion",
+      "B": "Diminuer la sécurité en ligne",
+      "C": "Fournir une couche de sécurité supplémentaire en demandant deux méthodes d'identification ou plus",
+      "D": "Réduire le coût des services en ligne"
+    }
+  },
+  {
+    "id": 36,
+    "theme": "Piratage",
+    "question": "Qu'est-ce que le \"whitelisting\" en cybersécurité ?",
+    "bonne_reponse": "B",
+    "difficulte": "Difficile",
+    "tips": "Le \"whitelisting\" est une stratégie de sécurité proactive qui aide à protéger les systèmes contre les logiciels malveillants en n'autorisant que l'exécution de logiciels connus et sécurisés.",
+    "reponses": {
+      "A": "Le processus de soumission d'un site web à un moteur de recherche",
+      "B": "La pratique consistant à autoriser uniquement certains logiciels pré-approuvés à s'exécuter sur un système informatique",
+      "C": "Le fait de marquer des e-mails comme non-spam",
+      "D": "La création d'une liste de mots de passe forts recommandés pour les utilisateurs"
+    }
+  },
+  {
+    "id": 37,
+    "theme": "Réponses aux incidents",
+    "question": "Doit-on immédiatement déconnecter un ordinateur du réseau s'il est suspecté d'être infecté par un malware ?",
+    "bonne_reponse": "A",
+    "difficulte": "Facile",
+    "tips": "Cela peut aider à empêcher la propagation du malware à d'autres systèmes ou fichiers sur le réseau, minimisant ainsi les dommages.",
+    "reponses": {
+      "A": "Oui",
+      "B": "Non",
+      "C": "",
+      "D": ""
+    }
+  },
+  {
+    "id": 38,
+    "theme": "Réponses aux incidents",
+    "question": "Un antivirus est-il capable de détecter tous les types de malware ?",
+    "bonne_reponse": "B",
+    "difficulte": "Facile",
+    "tips": "Bien que les antivirus soient essentiels pour la sécurité, ils ne peuvent pas détecter tous les nouveaux ou variantes avancées de malware. C'est pourquoi une approche de sécurité multicouche est recommandée.",
+    "reponses": {
+      "A": "Oui",
+      "B": "Non",
+      "C": "",
+      "D": ""
+    }
+  },
+  {
+    "id": 39,
+    "theme": "Réponses aux incidents",
+    "question": "Faut-il régulièrement mettre à jour son logiciel antivirus ?",
+    "bonne_reponse": "A",
+    "difficulte": "Facile",
+    "tips": "Les mises à jour régulières sont cruciales pour assurer que votre antivirus peut reconnaître et protéger contre les derniers malwares et vulnérabilités découverts.",
+    "reponses": {
+      "A": "Oui",
+      "B": "Non",
+      "C": "",
+      "D": ""
+    }
+  },
+  {
+    "id": 40,
+    "theme": "Réponses aux incidents",
+    "question": "Est-ce que redémarrer votre ordinateur peut parfois supprimer des malwares ?",
+    "bonne_reponse": "B",
+    "difficulte": "Facile",
+    "tips": "Bien que certaines actions temporaires du malware puissent être interrompues par un redémarrage, la plupart des malwares modernes sont conçus pour persister après le redémarrage.",
+    "reponses": {
+      "A": "Oui",
+      "B": "Non",
+      "C": "",
+      "D": ""
+    }
+  },
+  {
+    "id": 41,
+    "theme": "Réponses aux incidents",
+    "question": "Quelle est la première étape à suivre après avoir détecté une infection par un ransomware ?",
+    "bonne_reponse": "C",
+    "difficulte": "Moyen",
+    "tips": "Isoler l'ordinateur empêche la propagation du ransomware à d'autres parties du réseau et permet une analyse plus sûre et une récupération des données.",
+    "reponses": {
+      "A": "Payer la rançon demandée",
+      "B": "Éteindre l'ordinateur infecté",
+      "C": "Isoler l'ordinateur du réseau",
+      "D": "Effacer tous les fichiers de l'ordinateur"
+    }
+  },
+  {
+    "id": 42,
+    "theme": "Réponses aux incidents",
+    "question": "Quel outil peut être utilisé pour identifier la source d'une infection de malware ?",
+    "bonne_reponse": "D",
+    "difficulte": "Moyen",
+    "tips": "Un analyseur de réseau peut aider à surveiller le trafic entrant et sortant pour identifier les activités suspectes et déterminer la source de l'infection.",
+    "reponses": {
+      "A": "Pare-feu",
+      "B": "Logiciel de suivi de temps",
+      "C": "Antivirus",
+      "D": "Analyseur de réseau"
+    }
+  },
+  {
+    "id": 43,
+    "theme": "Réponses aux incidents",
+    "question": "Est-il important de former les employés à la reconnaissance des e-mails de phishing ?",
+    "bonne_reponse": "A",
+    "difficulte": "Moyen",
+    "tips": "La sensibilisation et la formation des employés sont des éléments clés pour prévenir les infections de malware, car les e-mails de phishing sont une méthode d'attaque commune.",
+    "reponses": {
+      "A": "Oui",
+      "B": "Non",
+      "C": "",
+      "D": ""
+    }
+  },
+  {
+    "id": 44,
+    "theme": "Réponses aux incidents",
+    "question": "Que doit contenir un plan de réponse aux incidents de cybersécurité ?",
+    "bonne_reponse": "B",
+    "difficulte": "Moyen",
+    "tips": "Un plan de réponse efficace doit inclure les procédures à suivre lors d'un incident, les rôles et responsabilités, ainsi que les plans de communication interne et externe.",
+    "reponses": {
+      "A": "Uniquement les contacts de l'équipe informatique",
+      "B": "Les étapes de réponse technique et la communication externe",
+      "C": "Une liste de logiciels antivirus recommandés",
+      "D": "Les mots de passe administrateur"
+    }
+  },
+  {
+    "id": 45,
+    "theme": "Réponses aux incidents",
+    "question": "Qu'est-ce que le \"Threat Hunting\" en cybersécurité ?",
+    "bonne_reponse": "B",
+    "difficulte": "Difficile",
+    "tips": "Le Threat Hunting est une démarche proactive essentielle pour détecter les menaces avancées et latentes qui échappent souvent à la détection traditionnelle, permettant aux organisations de stopper les attaquants avant qu'ils ne causent des dommages importants.",
+    "reponses": {
+      "A": "Le processus d'achat et de vente d'informations sur les menaces",
+      "B": "La pratique proactive de la recherche de cybermenaces qui n'ont pas encore été détectées par les outils de sécurité automatisés",
+      "C": "Un concours où les hackers tentent de pénétrer dans des systèmes pour des récompenses",
+      "D": "La mise en place de faux réseaux pour attirer les cybercriminels"
+    }
+  },
+  {
+    "id": 46,
+    "theme": "Réponses aux incidents",
+    "question": "Quel est le rôle d'un \"Incident Responder\" dans la réponse aux incidents de cybersécurité ?",
+    "bonne_reponse": "D",
+    "difficulte": "Difficile",
+    "tips": "Les Incident Responders jouent un rôle crucial dans la gestion des incidents de sécurité en travaillant rapidement pour limiter l'impact, analyser l'attaque, éliminer la menace du réseau, et restaurer les opérations normales tout en tirant des leçons pour renforcer la posture de sécurité.",
+    "reponses": {
+      "A": "Réparer les ordinateurs endommagés physiquement",
+      "B": "Négocier avec les cybercriminels pour réduire les rançons",
+      "C": "Gérer la communication avec la presse pendant un incident de cybersécurité",
+      "D": "Identifier, contenir et éradiquer les cybermenaces, puis récupérer les systèmes et les données affectés"
+    }
+  },
+  {
+    "id": 47,
+    "theme": "Réponses aux incidents",
+    "question": "Pourquoi est-il important de réaliser des simulations d'attaques de phishing au sein d'une organisation ?",
+    "bonne_reponse": "B",
+    "difficulte": "Difficile",
+    "tips": "Les simulations d'attaques de phishing aident à identifier les lacunes dans la sensibilisation des employés aux menaces de phishing. Elles fournissent une opportunité précieuse pour la formation ciblée, augmentant ainsi la résilience organisationnelle contre de telles attaques.",
+    "reponses": {
+      "A": "Pour tester la performance du logiciel antivirus",
+      "B": "Pour identifier les employés vulnérables au phishing et les former en conséquence",
+      "C": "Pour augmenter le nombre d'e-mails reçus par les employés",
+      "D": "Pour évaluer l'efficacité des filtres spam"
+    }
+  },
+  {
+    "id": 48,
+    "theme": "Réponses aux incidents",
+    "question": "Qu'est-ce qu'un \"Indicator of Compromise\" (IoC) dans le cadre de la cybersécurité ?",
+    "bonne_reponse": "C",
+    "difficulte": "Difficile",
+    "tips": "Les IoCs sont cruciaux pour la détection rapide et la réponse aux incidents de sécurité. Ils permettent aux équipes de sécurité d'identifier les activités suspectes et de prendre des mesures correctives pour prévenir ou minimiser les dommages d'une attaque.",
+    "reponses": {
+      "A": "Une preuve que les systèmes de sécurité fonctionnent correctement",
+      "B": "Un signal qu'un employé est sur le point de quitter l'entreprise",
+      "C": "Des preuves techniques qui indiquent une potentielle intrusion ou compromission du système",
+      "D": "Une alerte indiquant que les logiciels de sécurité sont obsolètes"
+    }
+  }
+]
