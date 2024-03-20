@@ -46,6 +46,14 @@ let progressPercent;
     questionRep.push([recupQuestion[i]]);
     /** ------------- */
 
+    /** Load Tips */
+    let recupQuestionTips = data[nbQuestionRep-1]["tips"];
+    let questionTipsRep = [];
+
+    for(var i in recupQuestionTips)
+        questionTipsRep.push([recupQuestionTips[i]]);
+    /** ------------- */
+
 /** --------------------------------- */
 
 
@@ -95,6 +103,14 @@ function loadQuestion() {
         questionRep.push(recupQuestion);
         console.log(recupQuestion)
         /** ------------- */
+
+        /** Load Question */
+        recupQuestionTips = data[nbQuestionRep-1]["tips"];
+        questionTipsRep = [];
+
+        questionTipsRep.push(recupQuestionTips);
+        console.log(recupQuestionTips)
+        /** ------------- */
     /** ------------ */
 
     questionDiv[0].innerHTML = `
@@ -107,13 +123,7 @@ function loadQuestion() {
     tips[0].innerHTML = `
     <div class="contenuTIPS container-fluid row mb-4 mt-2">
         <div class="">Tips</div>
-        <div class="col-10 m-auto">
-            Eo adducta re per Isauriam, rege Persarum bellis finitimis inligato repellenteque a conlimitiis 
-            suis ferocissimas gentes, quae mente quadam versabili hostiliter eum saepe incessunt et in nos 
-            arma moventem aliquotiens iuvant, Nohodares quidam nomine e numero optimatum, incursare Mesopotamiam q
-            uotiens copia dederit ordinatus, explorabat nostra sollicite, si repperisset usquam locum vi 
-            subita perrupturus.
-        </div>
+        <div class="col-10 m-auto">${questionTipsRep[0]}</div>
     </div>
     <div class="position-relative">
         <button type="button" class="btnSuivant btn btn-primary col-1 position-absolute bottom-100 end-0 mb-1" style="background-color: #494949;">
