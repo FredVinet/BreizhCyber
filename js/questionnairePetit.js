@@ -16,6 +16,12 @@ const progressBar = Array.from(recupProgressBar);
 const recupQuestionDiv = document.getElementsByClassName("question");
 const questionDiv = Array.from(recupQuestionDiv);
 
+const recupThemeDiv = document.getElementsByClassName("theme");
+const themeDiv = Array.from(recupThemeDiv);
+
+const recupDifficulteDiv = document.getElementsByClassName("difficulte");
+const difficuleDiv = Array.from(recupDifficulteDiv);
+
 
 const nbTotalQuestion = 8;
 let nbQuestionRep = 1;
@@ -52,6 +58,22 @@ let progressPercent;
 
     for(var i in recupQuestionTips)
         questionTipsRep.push([recupQuestionTips[i]]);
+    /** ------------- */
+
+    /** Load Difficulte */
+    let recupTheme = data[nbQuestionRep-1]["theme"];
+    let questionThemeRep = [];
+
+    for(var i in recupTheme)
+        questionThemeRep.push([recupTheme[i]]);
+    /** ------------- */
+
+    /** Load Difficulte */
+    let recupDifficulte = data[nbQuestionRep-1]["difficulte"];
+    let questionDifficulteRep = [];
+
+    for(var i in recupDifficulte)
+        questionDifficulteRep.push([recupDifficulte[i]]);
     /** ------------- */
 
 /** --------------------------------- */
@@ -104,17 +126,41 @@ function loadQuestion() {
         console.log(recupQuestion)
         /** ------------- */
 
-        /** Load Question */
+        /** Load Tips */
         recupQuestionTips = data[nbQuestionRep-1]["tips"];
         questionTipsRep = [];
 
         questionTipsRep.push(recupQuestionTips);
         console.log(recupQuestionTips)
         /** ------------- */
+
+        /** Load Theme */
+        recupTheme = data[nbQuestionRep-1]["theme"];
+        questionThemeRep = [];
+
+        questionThemeRep.push(recupTheme);
+        console.log(recupTheme)
+        /** ------------- */
+
+        /** Load Difficulte */
+        recupDifficulte = data[nbQuestionRep-1]["difficulte"];
+        questionDifficulteRep = [];
+
+        questionDifficulteRep.push(recupDifficulte);
+        console.log(recupDifficulte)
+        /** ------------- */
     /** ------------ */
 
     questionDiv[0].innerHTML = `
         <div class="text position-absolute top-50 start-50 translate-middle text-black col-10">${questionRep[0]}</div>
+    `
+
+    themeDiv[0].innerHTML = `
+        <div class="text position-absolute top-50 start-50 translate-middle">${questionThemeRep[0]}</div>
+    `
+
+    difficuleDiv[0].innerHTML = `
+        <div class="text position-absolute top-50 start-50 translate-middle">${questionDifficulteRep[0]}</div>
     `
 
     //id random
