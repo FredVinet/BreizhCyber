@@ -89,6 +89,8 @@ function onResponse() {
     if (reponseDonnee) return; // Si une réponse a déjà été donnée, ne fait rien
     reponseDonnee = true; // Marque qu'une réponse a été donnée
 
+    
+
 
     if(answer == data[nbQuestionRep]["bonne_reponse"]){
         this.style = "background-color: rgba(138, 247, 138, 1); border-radius: 1em; min-height: 5em;";
@@ -265,41 +267,41 @@ function loadQuestion() {
 loadQuestion();
 
 
+
+
 function onSuivant() {
     nbQuestionRep++;
-    reponseDonnee = false; // Permet de répondre à la nouvelle question
-    if (nbQuestionRep == nbTotalQuestion) {
+    reponseDonnee = false;
 
+    if (nbQuestionRep == nbTotalQuestion) {
         let message = "";
         Object.entries(userStats).forEach(([cle, valeur]) => {
             message += `- ${cle} : ${valeur}/2\n`;
         });
-        // Mettre à jour le contenu de la modal avec les résultats
+
         document.getElementById("correctAnswers").innerText = `Réponses correctes : ${nbReponsesCorrectes}`;
         document.getElementById("incorrectAnswers").innerText = `Réponses incorrectes : ${nbReponsesIncorrectes}`;
         document.getElementById("infoAnswers").innerText = `Résultats :\n ${message}`;
 
-        // Afficher la modal
-        // Création de l'instance modal Bootstrap
+        // Création de l'instance modal Bootstrap avec les options pour empêcher la fermeture involontaire
         var resultModalElement = document.getElementById('resultModal');
-        var resultModal = new bootstrap.Modal(resultModalElement, {});
+        var resultModal = new bootstrap.Modal(resultModalElement, {
+            backdrop: 'static', // Empêche la fermeture en cliquant à l'extérieur
+            keyboard: false // Empêche la fermeture avec la touche Échap
+        });
 
-        // Affichage de la modal
-        resultModal.show();
+        resultModal.show(); // Affichage de la modal
 
         let donnees = "";
         Object.entries(userStats).forEach(([cle, valeur]) => {
             donnees += `${cle}:${valeur};`;
         });
 
-        // Encodage des valeurs pour une utilisation sûre dans l'URL
         let encodedTest1 = encodeURIComponent(donnees);
 
-        // Récupération des éléments à modifier à l'intérieur de la modal
         const recupNextElementHTML = resultModalElement.getElementsByClassName("next");
         const nextElements = Array.from(recupNextElementHTML);
 
-        // Modification du HTML de chaque élément
         nextElements.forEach(element => {
             element.innerHTML = `
                 <a href="questionnaire2.html?datas=${encodedTest1}">
@@ -307,7 +309,6 @@ function onSuivant() {
                 </a>
             `;
         });
-
     } else {
         loadQuestion();
     }
