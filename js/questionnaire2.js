@@ -22,6 +22,15 @@ const themeDiv = Array.from(recupThemeDiv);
 const recupDifficulteDiv = document.getElementsByClassName("difficulte");
 const difficuleDiv = Array.from(recupDifficulteDiv);
 
+function getQueryParam(param) {
+    const urlParams = new URLSearchParams(window.location.search);
+    return urlParams.get(param);
+}
+
+// Utilisation de la fonction pour récupérer test1 et test2
+const test1 = getQueryParam('datas');
+
+console.log(test1);
 
 const nbTotalQuestion = 48;
 let nbQuestionRep = 0;
