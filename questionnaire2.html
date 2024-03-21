@@ -79,24 +79,26 @@
             </div>
         </nav>
         <!-- Navbar END -->
+        <!-- Modal Résultats -->
         <div class="modal fade" id="resultModal" tabindex="-1" aria-labelledby="resultModalLabel" aria-hidden="true">
             <div class="modal-dialog modal-dialog-centered">
-            <div class="modal-content">
-                <div class="modal-header">
-                <h5 class="modal-title" id="resultModalLabel">Résultats du Quiz</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="resultModalLabel">Résultats du Quiz</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <p id="correctAnswers"></p>
+                        <p id="incorrectAnswers"></p>
+                        <p id="infoAnswers"></p>
+                    </div>
+                    <div class="next modal-footer">
+                        <a href="mail.html">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Contactez-nous</button>
+                        </a>
+                        <p>résultat premier questionnaire</p>
+                    </div>
                 </div>
-                <div class="modal-body">
-                <p id="correctAnswers"></p>
-                <p id="incorrectAnswers"></p>
-                </div>
-                <div class="modal-footer">
-                    <a href="mail.html">
-                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Contactez-nous</button>
-                    </a>
-                    <p>résultat premier questionnaire</p>
-                </div>
-            </div>
             </div>
         </div>
 
@@ -140,16 +142,16 @@
                             <!-- Question END -->
 
                             <!-- Tips -->
-                            <div class="tips col-8 col-lg-6 m-auto mt-2 d-none" style="background-color: rgba(204, 204, 204, 0.8); border-radius: 1em; min-height: 5em;">
-                                <div class="contenuTIPS container-fluid row mb-4 mt-2">
-                                    <div class="">Tips</div>
-                                    <div class="col-10 m-auto">
-                                        Eo adducta re per Isauriam, rege Persarum bellis finitimis inligato repellenteque a conlimitiis
-                                        suis ferocissimas gentes, quae mente quadam versabili hostiliter eum saepe incessunt et in nos
-                                        arma moventem aliquotiens iuvant, Nohodares quidam nomine e numero optimatum, incursare Mesopotamiam q
-                                        uotiens copia dederit ordinatus, explorabat nostra sollicite, si repperisset usquam locum vi
-                                        subita perrupturus.
+                            <div class="tips col-8 col-lg-6 m-auto mt-3" style="background-color: rgba(204, 204, 204, 0.8); border-radius: 1em;">
+                                <div class="indication">
+                                    <div class="position-relative mt-2" style="min-height: 2rem;">
+                                        <div class="col-2 col-lg-2 position-absolute top-0 start-0 badge bg-secondary text-primary" style="min-height: 2em;">
+                                            <div class="text position-absolute top-50 start-50 translate-middle">Tips</div>
+                                        </div>
                                     </div>
+                                </div>
+                                <div class="contenu mb-5">
+                                    <div class="col-10 m-auto">Information.</div>
                                 </div>
                                 <div class="position-relative">
                                     <button type="button" class="btnSuivant btn btn-primary col-1 position-absolute bottom-100 end-0 mb-1" style="background-color: #494949;">
@@ -158,15 +160,8 @@
                                 </div>
                             </div>
                             <!-- Tips END -->
-
-                            
-                            
                         </div>
                     </div>
-                    
-
-                    
-                    
                 </div>
             </div>
         </div>
