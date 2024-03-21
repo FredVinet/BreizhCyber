@@ -19,13 +19,11 @@ const themeDiv = Array.from(recupThemeDiv);
 const recupDifficulteDiv = document.getElementsByClassName("difficulte");
 const difficuleDiv = Array.from(recupDifficulteDiv);
 
-const recupReponseAll = document.getElementsByClassName("reponse");
-const reponseAll = Array.from(recupReponseAll);
-
 
 const nbTotalQuestion = 8;
 let nbQuestionRep = 0;
 let progressPercent;
+let userStats = {};
 
 /** Convert json data object to array */
     /** Load Answers */
@@ -103,20 +101,18 @@ function onResponse() {
     console.log(typeof answer);
     console.log(typeof answerCorrect[0]);
 
-    if((answer === answerCorrect) && (tips[0].classList.contains("d-none"))){
+    if (!userStats.hasOwnProperty(questionThemeRep[0])) userStats[questionThemeRep[0]] = 0
+
+    if((answer == answerCorrect) && (tips[0].classList.contains("d-none"))){
         this.style = "background-color: rgba(138, 247, 138, 1); border-radius: 1em; min-height: 5em;"
-    }else if((answer !== answerCorrect[0]) && (tips[0].classList.contains("d-none"))){
+        userStats[questionThemeRep[0]] += 1
+    }else if((answer != answerCorrect[0]) && (tips[0].classList.contains("d-none"))){
         this.style = "background-color: rgba(246, 159, 159, 1); border-radius: 1em; min-height: 5em;"
     }else{
         this.style = "background-color: #f1f1f1; border-radius: 1em; min-height: 5em;"
     }
 
     tips[0].classList.remove("d-none");
-    
-    // Désactiver les boutons de réponse après le choix
-    answerElement[0].childNodes.forEach(child => {
-        child.style.pointerEvents = "none";
-    });
     
     console.log("click");
 }
@@ -143,7 +139,7 @@ function loadQuestion() {
         /** Load Question */
         recupQuestion = data[nbQuestionRep]["question"];
         questionRep = [];
-        
+
         questionRep.push(recupQuestion);
         console.log(recupQuestion)
         /** ------------- */
@@ -184,6 +180,8 @@ function loadQuestion() {
     difficuleDiv[0].innerHTML = `
         <div class="text position-absolute top-50 start-50 translate-middle">${questionDifficulteRep[0]}</div>
     `
+
+
 
     //id random
     answerElement[0].innerHTML= "";
@@ -260,7 +258,7 @@ function loadQuestion() {
 
     newBtn.forEach((element) => {
         element.addEventListener("click", onSuivant);
-        
+
     });
 }
 
@@ -269,23 +267,49 @@ loadQuestion();
 
 function onSuivant() {
     nbQuestionRep++;
-    // id random
     reponseDonnee = false; // Permet de répondre à la nouvelle question
-
-    answers = ["a", "c", "d", "b"]
-    
     if (nbQuestionRep == nbTotalQuestion) {
+
+        let message = "";
+        Object.entries(userStats).forEach(([cle, valeur]) => {
+            message += `- ${cle} : ${valeur}/2\n`;
+        });
         // Mettre à jour le contenu de la modal avec les résultats
         document.getElementById("correctAnswers").innerText = `Réponses correctes : ${nbReponsesCorrectes}`;
         document.getElementById("incorrectAnswers").innerText = `Réponses incorrectes : ${nbReponsesIncorrectes}`;
+        document.getElementById("infoAnswers").innerText = `Résultats :\n ${message}`;
 
         // Afficher la modal
-        var resultModal = new bootstrap.Modal(document.getElementById('resultModal'), {});
+        // Création de l'instance modal Bootstrap
+        var resultModalElement = document.getElementById('resultModal');
+        var resultModal = new bootstrap.Modal(resultModalElement, {});
+
+        // Affichage de la modal
         resultModal.show();
+
+        let donnees = "";
+        Object.entries(userStats).forEach(([cle, valeur]) => {
+            donnees += `${cle}:${valeur};`;
+        });
+
+        // Encodage des valeurs pour une utilisation sûre dans l'URL
+        let encodedTest1 = encodeURIComponent(donnees);
+
+        // Récupération des éléments à modifier à l'intérieur de la modal
+        const recupNextElementHTML = resultModalElement.getElementsByClassName("next");
+        const nextElements = Array.from(recupNextElementHTML);
+
+        // Modification du HTML de chaque élément
+        nextElements.forEach(element => {
+            element.innerHTML = `
+                <a href="questionnaire2.html?datas=${encodedTest1}">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Prochain Formulaire</button>
+                </a>
+            `;
+        });
+
     } else {
         loadQuestion();
     }
-    console.log(reponseAll);
-
 }
 
