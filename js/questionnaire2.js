@@ -65,9 +65,7 @@ let questionDifficulteRep;
 let nbReponsesCorrectes = 0;
 let nbReponsesIncorrectes = 0;
 let reponseDonnee = false;
-
-/** --------------------------------- */
-
+let randomNumber = Math.floor(Math.random() * 47);
 
 function onResponse() {
     const answer = this.getAttribute("answer");
@@ -76,7 +74,7 @@ function onResponse() {
     if (reponseDonnee) return; // Si une réponse a déjà été donnée, ne fait rien
     reponseDonnee = true; // Marque qu'une réponse a été donnée
 
-    if(answer == data[nbQuestionRep]["bonne_reponse"]){
+    if(answer == data[randomNumber]["bonne_reponse"]){
         this.style = "background-color: rgba(138, 247, 138, 1); border-radius: 1em; min-height: 5em;";
         nbReponsesCorrectes++;
     }else{
@@ -108,7 +106,7 @@ function onResponse() {
 function loadQuestion() {
     let i;
     /** Load Answers */
-    recupAnswers = data[nbQuestionRep]["reponses"];
+    recupAnswers = data[randomNumber]["reponses"];
     answers = [];
 
     for(i in recupAnswers)
@@ -116,7 +114,7 @@ function loadQuestion() {
     /** ------------ */
 
     /** Load Correct Answer */
-    recupAnswerCorrect = data[nbQuestionRep]["bonne_reponse"];
+    recupAnswerCorrect = data[randomNumber]["bonne_reponse"];
     answerCorrect = [];
 
     for(i in recupAnswerCorrect)
@@ -124,7 +122,7 @@ function loadQuestion() {
     /** ------------------- */
 
     /** Load Question */
-    recupQuestion = data[nbQuestionRep]["question"];
+    recupQuestion = data[randomNumber]["question"];
     questionRep = [];
 
     questionRep.push(recupQuestion);
@@ -132,7 +130,7 @@ function loadQuestion() {
     /** ------------- */
 
     /** Load Tips */
-    recupQuestionTips = data[nbQuestionRep]["tips"];
+    recupQuestionTips = data[randomNumber]["tips"];
     questionTipsRep = [];
 
     questionTipsRep.push(recupQuestionTips);
@@ -140,7 +138,7 @@ function loadQuestion() {
     /** ------------- */
 
     /** Load Theme */
-    recupTheme = data[nbQuestionRep]["theme"];
+    recupTheme = data[randomNumber]["theme"];
     questionThemeRep = [];
 
     questionThemeRep.push(recupTheme);
@@ -148,7 +146,7 @@ function loadQuestion() {
     /** ------------- */
 
     /** Load Difficulte */
-    recupDifficulte = data[nbQuestionRep]["difficulte"];
+    recupDifficulte = data[randomNumber]["difficulte"];
     questionDifficulteRep = [];
 
     questionDifficulteRep.push(recupDifficulte);
@@ -248,8 +246,8 @@ function loadQuestion() {
 
 loadQuestion();
 
-
 function onSuivant() {
+    randomNumber = Math.floor(Math.random() * 47);
     nbQuestionRep++;
     reponseDonnee = false; // Permet de répondre à la nouvelle question
     if (nbQuestionRep == nbTotalQuestion) {
