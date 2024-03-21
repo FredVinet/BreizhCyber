@@ -22,6 +22,9 @@ const themeDiv = Array.from(recupThemeDiv);
 const recupDifficulteDiv = document.getElementsByClassName("difficulte");
 const difficuleDiv = Array.from(recupDifficulteDiv);
 
+const recupReponseAll = document.getElementsByClassName("reponse");
+const reponseAll = Array.from(recupReponseAll);
+
 
 const nbTotalQuestion = 48;
 let nbQuestionRep = 0;
@@ -76,6 +79,10 @@ let progressPercent;
         questionDifficulteRep.push([recupDifficulte[i]]);
     /** ------------- */
 
+    let nbReponsesCorrectes = 0;
+    let nbReponsesIncorrectes = 0;  
+    let reponseDonnee = false; 
+
 /** --------------------------------- */
 
 
@@ -83,6 +90,18 @@ function onResponse() {
     const answer = this.getAttribute("answer");
 
     this.style = "background-color: #fff; border-radius: 1em; min-height: 5em;"
+
+    if (reponseDonnee) return; // Si une réponse a déjà été donnée, ne fait rien
+    reponseDonnee = true; // Marque qu'une réponse a été donnée
+
+
+    if(answer == data[nbQuestionRep]["bonne_reponse"]){
+        this.style = "background-color: rgba(138, 247, 138, 1); border-radius: 1em; min-height: 5em;";
+        nbReponsesCorrectes++;
+    }else{
+        this.style = "background-color: rgba(246, 159, 159, 1); border-radius: 1em; min-height: 5em;";
+        nbReponsesIncorrectes++;
+    }
 
     console.log(typeof answer);
     console.log(typeof answerCorrect[0]);
@@ -96,6 +115,12 @@ function onResponse() {
     }
 
     tips[0].classList.remove("d-none");
+
+     // Désactiver les boutons de réponse après le choix
+     answerElement[0].childNodes.forEach(child => {
+        child.style.pointerEvents = "none";
+    });
+    
     
     console.log("click");
 };
@@ -242,19 +267,28 @@ function loadQuestion() {
 
 
 loadQuestion();
-const recupReponseAll = document.getElementsByClassName("reponse");
-const reponseAll = Array.from(recupReponseAll);
-
 
 
 function onSuivant() {
     nbQuestionRep++;
     // id random
+    reponseDonnee = false; // Permet de répondre à la nouvelle question
 
     answers = ["a", "c", "d", "b"]
-    loadQuestion();
+    
+    if (nbQuestionRep == nbTotalQuestion) {
+        // Mettre à jour le contenu de la modal avec les résultats
+        document.getElementById("correctAnswers").innerText = `Réponses correctes : ${nbReponsesCorrectes}`;
+        document.getElementById("incorrectAnswers").innerText = `Réponses incorrectes : ${nbReponsesIncorrectes}`;
 
+        // Afficher la modal
+        var resultModal = new bootstrap.Modal(document.getElementById('resultModal'), {});
+        resultModal.show();
+    } else {
+        loadQuestion();
+    }
     console.log(reponseAll);
+
 }
 
 
