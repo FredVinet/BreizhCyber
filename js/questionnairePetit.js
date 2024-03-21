@@ -19,7 +19,6 @@ const themeDiv = Array.from(recupThemeDiv);
 const recupDifficulteDiv = document.getElementsByClassName("difficulte");
 const difficuleDiv = Array.from(recupDifficulteDiv);
 
-
 const nbTotalQuestion = 8;
 let nbQuestionRep = 0;
 let progressPercent;
@@ -41,7 +40,6 @@ let questionDifficulteRep;
 let nbReponsesCorrectes = 0;
 let nbReponsesIncorrectes = 0;
 let reponseDonnee = false;
-
 
 function onResponse() {
     const answer = this.getAttribute("answer");
