@@ -82,22 +82,21 @@
         <!-- Modal Résultats -->
         <div class="modal fade" id="resultModal" tabindex="-1" aria-labelledby="resultModalLabel" aria-hidden="true">
             <div class="modal-dialog modal-dialog-centered">
-            <div class="modal-content">
-                <div class="modal-header">
-                <h5 class="modal-title" id="resultModalLabel">Résultats du Quiz</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="resultModalLabel">Résultats du Quiz</h5>
+                    </div>
+                    <div class="modal-body">
+                        <p id="correctAnswers"></p>
+                        <p id="incorrectAnswers"></p>
+                        <p id="infoAnswers"></p>
+                    </div>
+                    <div class="next modal-footer">
+                        <a href="questionnaire2.html">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Prochain Formulaire</button>
+                        </a>
+                    </div>
                 </div>
-                <div class="modal-body">
-                <p id="correctAnswers"></p>
-                <p id="incorrectAnswers"></p>
-                <p id="infoAnswers"></p>
-                </div>
-                <div class="next modal-footer">
-                    <a href="questionnaire2.html">
-                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Prochain Formulaire</button>
-                    </a>
-                </div>
-            </div>
             </div>
         </div>
 

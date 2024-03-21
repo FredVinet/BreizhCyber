@@ -1,6 +1,5 @@
 import data from "./questPart2.json" assert { type: "json" };
 
-
 const recupAnswerElementHTML = document.getElementsByClassName("answers");
 const answerElement = Array.from(recupAnswerElementHTML);
 
@@ -19,61 +18,49 @@ const themeDiv = Array.from(recupThemeDiv);
 const recupDifficulteDiv = document.getElementsByClassName("difficulte");
 const difficuleDiv = Array.from(recupDifficulteDiv);
 
+function getQueryParam(param) {
+    const urlParams = new URLSearchParams(window.location.search);
+    return urlParams.get(param);
+}
 
-const nbTotalQuestion = 20;
+// Utilisation de la fonction pour récupérer test1 et test2
+let oldDatas = getQueryParam('datas');
+
+// Suppression du dernier caractère ';' si présent pour éviter un élément vide
+if (oldDatas.endsWith(';')) {
+    oldDatas = oldDatas.slice(0, -1);
+}
+
+// Diviser la chaîne pour obtenir chaque paire clé:valeur
+let pairs = oldDatas.split(';');
+
+// Créer un objet pour stocker les résultats
+let oldUserStats = {};
+
+// Itérer sur chaque paire, la diviser en clé et valeur, et ajouter au résultat
+pairs.forEach(pair => {
+    let [key, value] = pair.split(':');
+    oldUserStats[key] = parseInt(value, 10); // Convertir la valeur en nombre
+});
+
+const nbTotalQuestion = 5;
 let nbQuestionRep = 0;
 let progressPercent;
-let userStats = {};
+let newUserStats = {};
+let newTotalUserStats = {};
 
-/** Convert json data object to array */
-/** Load Answers */
-let recupAnswers = data[nbQuestionRep]["reponses"];
-let answers = [];
-
-let i;
-for(i in recupAnswers)
-    answers.push([i, recupAnswers[i]]);
-/** ------------ */
-
-/** Load Correct Answer */
-let recupAnswerCorrect = data[nbQuestionRep]["bonne_reponse"];
-let answerCorrect = [];
-
-for(i in recupAnswerCorrect)
-    answerCorrect.push([recupAnswerCorrect[i]]);
-/** ------------------- */
-
-/** Load Question */
-let recupQuestion = data[nbQuestionRep]["question"];
-let questionRep = [];
-
-for(i in recupQuestion)
-    questionRep.push([recupQuestion[i]]);
-/** ------------- */
-
-/** Load Tips */
-let recupQuestionTips = data[nbQuestionRep]["tips"];
-let questionTipsRep = [];
-
-for(i in recupQuestionTips)
-    questionTipsRep.push([recupQuestionTips[i]]);
-/** ------------- */
-
-/** Load Difficulte */
-let recupTheme = data[nbQuestionRep]["theme"];
-let questionThemeRep = [];
-
-for(i in recupTheme)
-    questionThemeRep.push([recupTheme[i]]);
-/** ------------- */
-
-/** Load Difficulte */
-let recupDifficulte = data[nbQuestionRep]["difficulte"];
-let questionDifficulteRep = [];
-
-for(i in recupDifficulte)
-    questionDifficulteRep.push([recupDifficulte[i]]);
-/** ------------- */
+let recupAnswers;
+let answers;
+let recupAnswerCorrect;
+let answerCorrect;
+let recupQuestion;
+let questionRep;
+let recupQuestionTips;
+let questionTipsRep;
+let recupTheme;
+let questionThemeRep;
+let recupDifficulte;
+let questionDifficulteRep;
 
 let nbReponsesCorrectes = 0;
 let nbReponsesIncorrectes = 0;
@@ -89,7 +76,6 @@ function onResponse() {
     if (reponseDonnee) return; // Si une réponse a déjà été donnée, ne fait rien
     reponseDonnee = true; // Marque qu'une réponse a été donnée
 
-
     if(answer == data[nbQuestionRep]["bonne_reponse"]){
         this.style = "background-color: rgba(138, 247, 138, 1); border-radius: 1em; min-height: 5em;";
         nbReponsesCorrectes++;
@@ -101,11 +87,13 @@ function onResponse() {
     console.log(typeof answer);
     console.log(typeof answerCorrect[0]);
 
-    if (!userStats.hasOwnProperty(questionThemeRep[0])) userStats[questionThemeRep[0]] = 0
+    if (!newUserStats.hasOwnProperty(questionThemeRep[0])) newUserStats[questionThemeRep[0]] = 0
+    if (!newTotalUserStats.hasOwnProperty(questionThemeRep[0])) newTotalUserStats[questionThemeRep[0]] = 0
+    newTotalUserStats[questionThemeRep[0]] += 1
 
     if((answer == answerCorrect) && (tips[0].classList.contains("d-none"))){
         this.style = "background-color: rgba(138, 247, 138, 1); border-radius: 1em; min-height: 5em;"
-        userStats[questionThemeRep[0]] += 1
+        newUserStats[questionThemeRep[0]] += 1
     }else if((answer != answerCorrect[0]) && (tips[0].classList.contains("d-none"))){
         this.style = "background-color: rgba(246, 159, 159, 1); border-radius: 1em; min-height: 5em;"
     }else{
@@ -118,7 +106,6 @@ function onResponse() {
 }
 
 function loadQuestion() {
-    /** Load Element */
     let i;
     /** Load Answers */
     recupAnswers = data[nbQuestionRep]["reponses"];
@@ -167,7 +154,6 @@ function loadQuestion() {
     questionDifficulteRep.push(recupDifficulte);
     console.log(recupDifficulte)
     /** ------------- */
-    /** ------------ */
 
     questionDiv[0].innerHTML = `
         <div class="text position-absolute top-50 start-50 translate-middle text-black col-10">${questionRep[0]}</div>
@@ -180,8 +166,6 @@ function loadQuestion() {
     difficuleDiv[0].innerHTML = `
         <div class="text position-absolute top-50 start-50 translate-middle">${questionDifficulteRep[0]}</div>
     `
-
-
 
     //id random
     answerElement[0].innerHTML= "";
@@ -270,19 +254,29 @@ function onSuivant() {
     reponseDonnee = false; // Permet de répondre à la nouvelle question
     if (nbQuestionRep == nbTotalQuestion) {
 
-        let message = "";
-        Object.entries(userStats).forEach(([cle, valeur]) => {
-            message += `- ${cle} : ${valeur}/2\n`;
+        let ancienResultat = "";
+        Object.entries(oldUserStats).forEach(([cle, valeur]) => {
+            ancienResultat += `- ${cle} : ${valeur}/2\n`;
         });
+
+        let nouveauResultat = "";
+        Object.entries(newUserStats).forEach(([cle, valeur]) => {
+            if(cle in newTotalUserStats) nouveauResultat += `- ${cle} : ${valeur}/${newTotalUserStats[cle]}\n`;
+        });
+
         // Mettre à jour le contenu de la modal avec les résultats
         document.getElementById("correctAnswers").innerText = `Réponses correctes : ${nbReponsesCorrectes}`;
         document.getElementById("incorrectAnswers").innerText = `Réponses incorrectes : ${nbReponsesIncorrectes}`;
-        document.getElementById("infoAnswers").innerText = `Résultats :\n ${message}`;
+        document.getElementById("oldInfoAnswers").innerText = `Ancien résultats :\n ${ancienResultat}`;
+        document.getElementById("newInfoAnswers").innerText = `Nouveau résultats :\n ${nouveauResultat}`;
 
         // Afficher la modal
         // Création de l'instance modal Bootstrap
         var resultModalElement = document.getElementById('resultModal');
-        var resultModal = new bootstrap.Modal(resultModalElement, {});
+        var resultModal = new bootstrap.Modal(resultModalElement, {
+            backdrop: 'static', // Empêche la fermeture en cliquant à l'extérieur
+            keyboard: false // Empêche la fermeture avec la touche Échap
+        });
         resultModal.show();
 
     } else {

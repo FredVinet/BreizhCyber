@@ -25,61 +25,22 @@ let nbQuestionRep = 0;
 let progressPercent;
 let userStats = {};
 
-/** Convert json data object to array */
-    /** Load Answers */
-    let recupAnswers = data[nbQuestionRep]["reponses"];
-    let answers = [];
+let recupAnswers;
+let answers;
+let recupAnswerCorrect;
+let answerCorrect;
+let recupQuestion;
+let questionRep;
+let recupQuestionTips;
+let questionTipsRep;
+let recupTheme;
+let questionThemeRep;
+let recupDifficulte;
+let questionDifficulteRep;
 
-    let i;
-    for(i in recupAnswers)
-        answers.push([i, recupAnswers[i]]);
-    /** ------------ */
-
-    /** Load Correct Answer */
-    let recupAnswerCorrect = data[nbQuestionRep]["bonne_reponse"];
-    let answerCorrect = [];
-
-    for(i in recupAnswerCorrect)
-    answerCorrect.push([recupAnswerCorrect[i]]);
-    /** ------------------- */
-
-    /** Load Question */
-    let recupQuestion = data[nbQuestionRep]["question"];
-    let questionRep = [];
-    
-    for(i in recupQuestion)
-    questionRep.push([recupQuestion[i]]);
-    /** ------------- */
-
-    /** Load Tips */
-    let recupQuestionTips = data[nbQuestionRep]["tips"];
-    let questionTipsRep = [];
-
-    for(i in recupQuestionTips)
-        questionTipsRep.push([recupQuestionTips[i]]);
-    /** ------------- */
-
-    /** Load Difficulte */
-    let recupTheme = data[nbQuestionRep]["theme"];
-    let questionThemeRep = [];
-
-    for(i in recupTheme)
-        questionThemeRep.push([recupTheme[i]]);
-    /** ------------- */
-
-    /** Load Difficulte */
-    let recupDifficulte = data[nbQuestionRep]["difficulte"];
-    let questionDifficulteRep = [];
-
-    for(i in recupDifficulte)
-        questionDifficulteRep.push([recupDifficulte[i]]);
-    /** ------------- */
-
-    let nbReponsesCorrectes = 0;
-    let nbReponsesIncorrectes = 0;  
-    let reponseDonnee = false;    
-
-/** --------------------------------- */
+let nbReponsesCorrectes = 0;
+let nbReponsesIncorrectes = 0;
+let reponseDonnee = false;
 
 
 function onResponse() {
@@ -88,9 +49,6 @@ function onResponse() {
     this.style = "background-color: #fff; border-radius: 1em; min-height: 5em;"
     if (reponseDonnee) return; // Si une réponse a déjà été donnée, ne fait rien
     reponseDonnee = true; // Marque qu'une réponse a été donnée
-
-    
-
 
     if(answer == data[nbQuestionRep]["bonne_reponse"]){
         this.style = "background-color: rgba(138, 247, 138, 1); border-radius: 1em; min-height: 5em;";
@@ -120,56 +78,54 @@ function onResponse() {
 }
 
 function loadQuestion() {
-    /** Load Element */
-        let i;
+    let i;
     /** Load Answers */
-        recupAnswers = data[nbQuestionRep]["reponses"];
-        answers = [];
+    recupAnswers = data[nbQuestionRep]["reponses"];
+    answers = [];
 
-        for(i in recupAnswers)
-        answers.push([i, recupAnswers[i]]);
-        /** ------------ */
-
-        /** Load Correct Answer */
-        recupAnswerCorrect = data[nbQuestionRep]["bonne_reponse"];
-        answerCorrect = [];
-
-        for(i in recupAnswerCorrect)
-        answerCorrect.push([recupAnswerCorrect[i]]);
-        /** ------------------- */
-
-        /** Load Question */
-        recupQuestion = data[nbQuestionRep]["question"];
-        questionRep = [];
-
-        questionRep.push(recupQuestion);
-        console.log(recupQuestion)
-        /** ------------- */
-
-        /** Load Tips */
-        recupQuestionTips = data[nbQuestionRep]["tips"];
-        questionTipsRep = [];
-
-        questionTipsRep.push(recupQuestionTips);
-        console.log(recupQuestionTips)
-        /** ------------- */
-
-        /** Load Theme */
-        recupTheme = data[nbQuestionRep]["theme"];
-        questionThemeRep = [];
-
-        questionThemeRep.push(recupTheme);
-        console.log(recupTheme)
-        /** ------------- */
-
-        /** Load Difficulte */
-        recupDifficulte = data[nbQuestionRep]["difficulte"];
-        questionDifficulteRep = [];
-
-        questionDifficulteRep.push(recupDifficulte);
-        console.log(recupDifficulte)
-        /** ------------- */
+    for(i in recupAnswers)
+    answers.push([i, recupAnswers[i]]);
     /** ------------ */
+
+    /** Load Correct Answer */
+    recupAnswerCorrect = data[nbQuestionRep]["bonne_reponse"];
+    answerCorrect = [];
+
+    for(i in recupAnswerCorrect)
+    answerCorrect.push([recupAnswerCorrect[i]]);
+    /** ------------------- */
+
+    /** Load Question */
+    recupQuestion = data[nbQuestionRep]["question"];
+    questionRep = [];
+
+    questionRep.push(recupQuestion);
+    console.log(recupQuestion)
+    /** ------------- */
+
+    /** Load Tips */
+    recupQuestionTips = data[nbQuestionRep]["tips"];
+    questionTipsRep = [];
+
+    questionTipsRep.push(recupQuestionTips);
+    console.log(recupQuestionTips)
+    /** ------------- */
+
+    /** Load Theme */
+    recupTheme = data[nbQuestionRep]["theme"];
+    questionThemeRep = [];
+
+    questionThemeRep.push(recupTheme);
+    console.log(recupTheme)
+    /** ------------- */
+
+    /** Load Difficulte */
+    recupDifficulte = data[nbQuestionRep]["difficulte"];
+    questionDifficulteRep = [];
+
+    questionDifficulteRep.push(recupDifficulte);
+    console.log(recupDifficulte)
+    /** ------------- */
 
     questionDiv[0].innerHTML = `
         <div class="text position-absolute top-50 start-50 translate-middle text-black col-10">${questionRep[0]}</div>
